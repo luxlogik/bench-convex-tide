@@ -53,9 +53,8 @@ full_suite() {
   fi
   TIDE_MEDIA_ARTIFACTS="${artifacts}/fuzz" npm run media:fuzz
 
-  enable_netem
-  TIDE_MEDIA_ARTIFACTS="${artifacts}/network-chaos" npm run media:chaos
-  cleanup_netem
+  # bench: network-chaos rerun skipped (tc netem kernel module unavailable on compiler.dev runner kernel); skipped on both branches
+  echo "bench: skipping network-chaos rerun"
 }
 
 artifacts="${TIDE_MEDIA_ARTIFACTS:-/artifacts}"
