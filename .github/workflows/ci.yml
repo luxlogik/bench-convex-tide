@@ -88,7 +88,7 @@ jobs:
   site:
     # The documentation site in site/: type and config-reference checks,
     # formatting, then the prerendered build its Dockerfile serves.
-    runs-on: compiler-8cpu
+    runs-on: compiler-4cpu
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
