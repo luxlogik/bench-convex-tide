@@ -6,6 +6,7 @@ name: CI
 # ghcr.io/convex-works/tide.
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
   pull_request:
