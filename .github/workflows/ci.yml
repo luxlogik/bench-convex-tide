@@ -17,7 +17,7 @@ permissions:
 
 jobs:
   checks:
-    runs-on: ubuntu-latest
+    runs-on: compiler-8cpu
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-go@v7
@@ -85,7 +85,7 @@ jobs:
   site:
     # The documentation site in site/: type and config-reference checks,
     # formatting, then the prerendered build its Dockerfile serves.
-    runs-on: ubuntu-latest
+    runs-on: compiler-4cpu
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -109,7 +109,7 @@ jobs:
   media-e2e:
     # Lifecycle and recording scenarios, reliability, the seeded fuzzer and a
     # network-chaos rerun, against the real media server and recorder.
-    runs-on: ubuntu-latest
+    runs-on: compiler-8cpu
     needs: [checks]
     timeout-minutes: 90
     steps:
